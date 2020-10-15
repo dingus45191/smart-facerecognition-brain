@@ -10,10 +10,11 @@ function Logo() {
             
  
                <Tilt className="Tilt br2 shadow-2" options={{ max : 55 }} style={{ height: 250, width: 250 }} >
-                 <span className="Tilt-inner" role='img'> <img src={brain} alt='logo'></img> </span>
+                 <span className="Tilt-inner pa3" role='img'> <img src={brain} alt='logo' style={{paddingTop:'5px',textAlign:'center'}}></img> </span>
                </Tilt>
         </div>
     )
+
 }
 
 export default Logo
