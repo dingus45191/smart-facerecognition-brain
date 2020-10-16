@@ -9,19 +9,17 @@ import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 
 
-
-
-
 class App extends Component {
 
 
-  constructor() {
+    constructor(props) {
 
-      const app = new Clarifai.app({
+
+
+        super(props);
+        const app = new Clarifai.App({
           apiKey: '19ae56794a7340feb52b85b8d56d55bb'
-      })
-
-        super();
+       })
         this.state = {
             input: ''
         }
@@ -33,7 +31,8 @@ class App extends Component {
   onButtonSubmit() {
 
     console.log('click');
-    app.models.predict("d02b4508df58432fbb84e800597b8959",).then(
+    this.app.models.predict("d02b4508df58432fbb84e800597b8959",
+        "https://www.gstatic.com/tv/thumb/persons/487130/487130_v9_ba.jpg").then(
       function (response) {
 
       },
