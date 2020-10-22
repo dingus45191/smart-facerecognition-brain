@@ -8,6 +8,8 @@ import Navigation from './Components/Navigation/Navigation';
 import Rank from './Components/Rank/Rank';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
+import SignIn from './Components/SignIn/SignIn';
+import Register from "./Components/Register/Register";
 
 
 
@@ -29,7 +31,8 @@ class App extends Component {
         this.state = {
             input: '',
             imageUrl:'',
-            box:{}
+            box:{},
+            route: 'sign-in'
         }
 
 
@@ -71,7 +74,18 @@ class App extends Component {
     })
 
 
+  };
+
+  onRouteBack= ()=>{
+    this.setState( {route :'sign-in'})
   }
+  onRouteChange= ()=>{
+    this.setState( {route :'home'})
+  }
+  onRouteTo= ()=>{
+      this.setState( {route :'sign-up'})
+  }
+
   render() {
 
     const particleOptions = {
@@ -98,17 +112,39 @@ class App extends Component {
         params={particleOptions}
         className='particles'
       />
-      <Navigation/>
-      <Logo />
-      <Rank/>
-      <ImageLinkForm
-        onInputChange={this.onInputChange}
-        onSubmit={this.onButtonSubmit}
-      />
-      <FaceRecognition
-          box={this.state.box}
-          imageUrl={ this.state.imageUrl}
-      />
+
+      { this.state.route === 'home' ?
+          <>
+              <Navigation
+                  onRouteBack={this.onRouteBack}
+              />
+              <Logo />
+              <Rank/>
+              <ImageLinkForm
+                  onInputChange={this.onInputChange}
+                  onSubmit={this.onButtonSubmit}
+              />
+              <FaceRecognition
+                  box={this.state.box}
+                  imageUrl={ this.state.imageUrl}
+              />
+          </>
+          :
+          (
+              this.state.route==='sign-in' ?
+                  <SignIn
+                      onRouteChange={this.onRouteChange}
+                      onRouteTo={ this.onRouteTo }
+                  />:
+                  <Register
+                      onRouteBack={this.onRouteBack}
+                  />
+          )
+
+
+      }
+
+
 
     </div>
   );
