@@ -3,7 +3,7 @@ import "./SignIn.css"
 
 function SignIn({onRouteChange,onRouteTo}) {
     return (
-        <div>
+        <div className={'mag'}>
             <article className="br3 ba b--black-20 mv4 w-100 w-50-m w-25-l mw6 center shadow-5"> <main className="pa4 black-80">
                         <div className="measure ">
                           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
