@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react'
 import Tilt from 'react-tilt'
-import "../Logo.css"
-import brain from '../brain.png'
+import "./Logo.css"
+import brain from './brain.png'
 
 function Logo() {
     return (

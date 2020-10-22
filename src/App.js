@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-expressions */
 import React, {Component} from 'react';
 import './App.css';
-import FaceRecognition from './Components/FaceRecognition';
-import ImageLinkForm from './Components/ImageLinkForm';
-import Logo from './Components/Logo';
-import Navigation from './Components/Navigation';
-import Rank from './Components/Rank';
+import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
+import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
+import Logo from './Components/Logo/Logo';
+import Navigation from './Components/Navigation/Navigation';
+import Rank from './Components/Rank/Rank';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 
